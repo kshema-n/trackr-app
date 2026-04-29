@@ -5,8 +5,15 @@ deploy-pages:
   stage: deploy
   script:
     - mkdir -p public
-    - cp index.html public/index.html
-    - ls -R public
+    - |
+      cat > public/index.html << 'EOF'
+      <!doctype html>
+      <html>
+      <head><meta charset="utf-8"><title>Pages</title></head>
+      <body><h1>GitLab Pages is working</h1></body>
+      </html>
+      EOF
+    - test -s public/index.html
   pages:
     publish: public
   artifacts:
