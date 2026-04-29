@@ -1,14 +1,16 @@
 stages:
   - deploy
 
-pages:
+deploy-pages:
   stage: deploy
   script:
     - mkdir -p public
     - cp index.html public/index.html
-    - ls -R   # debug: shows files
+    - ls -R public
+  pages:
+    publish: public
   artifacts:
     paths:
-      - public
+      - public/
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
