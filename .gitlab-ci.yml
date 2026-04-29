@@ -6,4 +6,5 @@ pages:
   artifacts:
     paths:
       - public
-  publish: public
+  only:
+    - main
