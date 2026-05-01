@@ -1,11 +1,15 @@
-function topAction() {
-    const page = document.querySelector('.page.active').id;
-    if (page === 'pageDetail') { resetCurrentTracker() }
-    else { openAddModal() }
+function onTrackerClick(tracker) {
+  // hide home
+  document.getElementById("pageHome").style.display = "none";
+
+  // show detail
+  document.getElementById("pageDetail").style.display = "block";
+
+  // set title
+  document.getElementById("detailTitle").textContent = tracker.name;
 }
 
-function openAddModal(){
-  newT={step:1,template:null,name:'',desc:'',emoji:'🎯',color:'#38bdf8',sections:[]};
-  renderModalStep1();
-  document.getElementById('addModal').classList.remove('hidden');
+function goHome() {
+  document.getElementById("pageHome").style.display = "block";
+  document.getElementById("pageDetail").style.display = "none";
 }
