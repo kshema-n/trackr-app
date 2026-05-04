@@ -14,13 +14,18 @@
 
 <!-- HOME PAGE -->
 <div id="pageHome">
+  <input id="newTrackerName" placeholder="Tracker name">
+  <button onclick="addTracker()">Add Tracker</button>
   <div id="trackerList"></div>
 </div>
 
 <!-- DETAIL PAGE -->
-<div id="pageDetail" style="display:none;">
+<div id="pageDetail" style="display:none;" class="card">
   <button onclick="goHome()">⬅ Back</button>
   <h2 id="detailTitle"></h2>
+  <p id="detailDescription"></p>
+  <p id="detailStreak"></p>
+  <button onclick="increaseStreak()">+ Complete Today</button>
 </div>
 
 

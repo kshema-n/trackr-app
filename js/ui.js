@@ -5,7 +5,11 @@ function renderTrackers() {
   trackers.forEach(tracker => {
     const div = document.createElement("div");
     div.className = "card";
-    div.textContent = tracker.name;
+    div.innerHTML = `
+      <h3>${tracker.name}</h3>
+      <p>${tracker.description}</p>
+      <small>Streak: ${tracker.streak} days</small>
+    `;
 
     //on click event of trackers
     div.onclick = function () {
